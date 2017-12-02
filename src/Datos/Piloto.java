@@ -1,7 +1,7 @@
 package Datos;
 
 public final class Piloto extends PersonaDeCabina{
-	private int pilHorasDeVuelo;
+	private Integer pilHorasDeVuelo;
 
 	/**
 	 * 
@@ -13,10 +13,13 @@ public final class Piloto extends PersonaDeCabina{
 	/**
 	 * @param perNombre
 	 * @param persApellido
+	 * @param persNacionalidad
+	 * @param persEdad
 	 * @param pilHorasDeVuelo
 	 */
-	public Piloto(String perNombre, String persApellido, int pilHorasDeVuelo) {
-		super(perNombre, persApellido);
+	public Piloto(String perNombre, String persApellido, String persNacionalidad, Integer persEdad,
+			Integer pilHorasDeVuelo) {
+		super(perNombre, persApellido, persNacionalidad, persEdad);
 		this.pilHorasDeVuelo = pilHorasDeVuelo;
 	}
 
@@ -28,20 +31,29 @@ public final class Piloto extends PersonaDeCabina{
 	 * @param persEdad
 	 * @param pilHorasDeVuelo
 	 */
-	public Piloto(String perNombre, String perRut, String persApellido, String persNacionalidad, int persEdad,
-			int pilHorasDeVuelo) {
+	public Piloto(String perNombre, String perRut, String persApellido, String persNacionalidad, Integer persEdad,
+			Integer pilHorasDeVuelo) {
 		super(perNombre, perRut, persApellido, persNacionalidad, persEdad);
 		this.pilHorasDeVuelo = pilHorasDeVuelo;
 	}
 
-	public int getPilHorasDeVuelo() {
+	/**
+	 * @return the pilHorasDeVuelo
+	 */
+	public Integer getPilHorasDeVuelo() {
 		return pilHorasDeVuelo;
 	}
 
-	public void setPilHorasDeVuelo(int pilHorasDeVuelo) {
+	/**
+	 * @param pilHorasDeVuelo the pilHorasDeVuelo to set
+	 */
+	public void setPilHorasDeVuelo(Integer pilHorasDeVuelo) {
 		this.pilHorasDeVuelo = pilHorasDeVuelo;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Piloto [pilHorasDeVuelo=" + pilHorasDeVuelo + ", persApellido=" + persApellido + ", persNacionalidad="
@@ -55,7 +67,7 @@ public final class Piloto extends PersonaDeCabina{
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + pilHorasDeVuelo;
+		result = prime * result + ((pilHorasDeVuelo == null) ? 0 : pilHorasDeVuelo.hashCode());
 		return result;
 	}
 
@@ -71,11 +83,14 @@ public final class Piloto extends PersonaDeCabina{
 		if (getClass() != obj.getClass())
 			return false;
 		Piloto other = (Piloto) obj;
-		if (pilHorasDeVuelo != other.pilHorasDeVuelo)
+		if (pilHorasDeVuelo == null) {
+			if (other.pilHorasDeVuelo != null)
+				return false;
+		} else if (!pilHorasDeVuelo.equals(other.pilHorasDeVuelo))
 			return false;
 		return true;
 	}
 
-	
+
 	
 }

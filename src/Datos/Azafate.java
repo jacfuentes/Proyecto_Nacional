@@ -13,10 +13,12 @@ public final class Azafate extends PersonaDeCabina{
 	/**
 	 * @param perNombre
 	 * @param persApellido
+	 * @param persNacionalidad
+	 * @param persEdad
 	 * @param azaIdioma
 	 */
-	public Azafate(String perNombre, String persApellido, String azaIdioma) {
-		super(perNombre, persApellido);
+	public Azafate(String perNombre, String persApellido, String persNacionalidad, Integer persEdad, String azaIdioma) {
+		super(perNombre, persApellido, persNacionalidad, persEdad);
 		this.azaIdioma = azaIdioma;
 	}
 
@@ -28,7 +30,7 @@ public final class Azafate extends PersonaDeCabina{
 	 * @param persEdad
 	 * @param azaIdioma
 	 */
-	public Azafate(String perNombre, String perRut, String persApellido, String persNacionalidad, int persEdad,
+	public Azafate(String perNombre, String perRut, String persApellido, String persNacionalidad, Integer persEdad,
 			String azaIdioma) {
 		super(perNombre, perRut, persApellido, persNacionalidad, persEdad);
 		this.azaIdioma = azaIdioma;

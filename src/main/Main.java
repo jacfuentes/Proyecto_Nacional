@@ -28,10 +28,18 @@ public class Main {
 				pilo.setPerRut(r);
 				na=JOptionPane.showInputDialog("Ingrese nacionalidad del piloto");
 				pilo.setPersNacionalidad(na);
-				e=JOptionPane.showInputDialog("Ingrese edad del piloto");
-				pilo.setPersEdad(Integer.parseInt(e));
-				hv=JOptionPane.showInputDialog("Ingrese horas de vuelo del piloto");
-				pilo.setPilHorasDeVuelo(Integer.parseInt(hv));
+				while (pilo.getPersEdad()==null) {
+					e=JOptionPane.showInputDialog("Ingrese edad del piloto");
+					if (Integer.parseInt(e)>20) {
+						pilo.setPersEdad(Integer.parseInt(e));
+					}
+				}
+				while (pilo.getPilHorasDeVuelo()==null) {
+					hv=JOptionPane.showInputDialog("Ingrese horas de vuelo del piloto");
+					if (Integer.parseInt(hv)>399) {
+						pilo.setPilHorasDeVuelo(Integer.parseInt(hv));
+					}
+				}
 				System.out.println("Datos del piloto");
 				System.out.println("Nombre: "+pilo.getPerNombre());
 				System.out.println("Apellido: "+pilo.getPersApellido());
@@ -39,6 +47,8 @@ public class Main {
 				System.out.println("Nacionalidad: "+pilo.getPersNacionalidad());
 				System.out.println("Edad: "+pilo.getPersEdad());
 				System.out.println("Horas de vuelo: "+pilo.getPilHorasDeVuelo());
+			break;
+			
 			case '2':
 				n=JOptionPane.showInputDialog("Ingrese nombre de la azafate");
 				azaf.setPerNombre(n);
@@ -48,8 +58,12 @@ public class Main {
 				azaf.setPerRut(r);
 				na=JOptionPane.showInputDialog("Ingrese nacionalidad de la azafate");
 				azaf.setPersNacionalidad(na);
-				e=JOptionPane.showInputDialog("Ingrese edad de la azafate");
-				azaf.setPersEdad(Integer.parseInt(e));
+				while (azaf.getPersEdad()==null) {
+					e=JOptionPane.showInputDialog("Ingrese edad de la azafate");
+					if (Integer.parseInt(e)>20) {
+						azaf.setPersEdad(Integer.parseInt(e));
+					}
+				}
 				i=JOptionPane.showInputDialog("Idiomas que habla la Azafate");
 				azaf.setAzaIdioma(i);
 				System.out.println("Datos de la azafate");
@@ -59,6 +73,8 @@ public class Main {
 				System.out.println("Nacionalidad: "+azaf.getPersNacionalidad());
 				System.out.println("Edad: "+azaf.getPersEdad());
 				System.out.println("Idiomas: "+azaf.getAzaIdioma());
+			break;
+			
 			case'3':
 				nv=JOptionPane.showInputDialog("Ingrese N° de vuelo");
 				pasa.setPasNdeAsiento(Integer.parseInt(nv));
