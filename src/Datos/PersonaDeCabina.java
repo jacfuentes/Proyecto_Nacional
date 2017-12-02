@@ -1,14 +1,31 @@
 package Datos;
 
 public class PersonaDeCabina extends Persona {
-	private String persApellido;
-	private String persNacionalidad;
-	private int persEdad;
+	protected String persApellido;
+	protected String persNacionalidad;
+	protected int persEdad;
 	
 	public PersonaDeCabina() { super();
 	}
 
-	public PersonaDeCabina(String perNombre, String perRut, String persApellido, String persNacionalidad, int persEdad) {
+	/**
+	 * @param perNombre
+	 * @param persApellido
+	 */
+	public PersonaDeCabina(String perNombre, String persApellido) {
+		super(perNombre);
+		this.persApellido = persApellido;
+	}
+
+	/**
+	 * @param perNombre
+	 * @param perRut
+	 * @param persApellido
+	 * @param persNacionalidad
+	 * @param persEdad
+	 */
+	public PersonaDeCabina(String perNombre, String perRut, String persApellido, String persNacionalidad,
+			int persEdad) {
 		super(perNombre, perRut);
 		this.persApellido = persApellido;
 		this.persNacionalidad = persNacionalidad;
@@ -78,8 +95,7 @@ public class PersonaDeCabina extends Persona {
 			return false;
 		return true;
 	}
-	
-	
+
 	
 	
 }

@@ -1,38 +1,45 @@
 package Datos;
 
 public class Persona {
-	private String perNombre;
-	private String perRut;
-	
-	public Persona() {
+	protected String perNombre;
+	protected String perRut;
+	/**
+	 * 
+	 */
+	public Persona() { super();
 	}
-
+	/**
+	 * @param perNombre
+	 */
+	public Persona(String perNombre) {
+		super();
+		this.perNombre = perNombre;
+	}
+	/**
+	 * @param perNombre
+	 * @param perRut
+	 */
 	public Persona(String perNombre, String perRut) {
+		super();
 		this.perNombre = perNombre;
 		this.perRut = perRut;
 	}
-
 	public String getPerNombre() {
 		return perNombre;
 	}
-
 	public void setPerNombre(String perNombre) {
 		this.perNombre = perNombre;
 	}
-
 	public String getPerRut() {
 		return perRut;
 	}
-
 	public void setPerRut(String perRut) {
 		this.perRut = perRut;
 	}
-
 	@Override
 	public String toString() {
 		return "Persona [perNombre=" + perNombre + ", perRut=" + perRut + "]";
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -41,7 +48,6 @@ public class Persona {
 		result = prime * result + ((perRut == null) ? 0 : perRut.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -63,6 +69,6 @@ public class Persona {
 			return false;
 		return true;
 	}
-	
+
 	
 }

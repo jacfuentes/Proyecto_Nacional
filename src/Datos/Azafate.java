@@ -3,28 +3,63 @@ package Datos;
 public final class Azafate extends PersonaDeCabina{
 	private String azaIdioma;
 
+	/**
+	 * 
+	 */
 	public Azafate() {
+		super();
 	}
 
+	/**
+	 * @param perNombre
+	 * @param persApellido
+	 * @param azaIdioma
+	 */
+	public Azafate(String perNombre, String persApellido, String azaIdioma) {
+		super(perNombre, persApellido);
+		this.azaIdioma = azaIdioma;
+	}
+
+	/**
+	 * @param perNombre
+	 * @param perRut
+	 * @param persApellido
+	 * @param persNacionalidad
+	 * @param persEdad
+	 * @param azaIdioma
+	 */
 	public Azafate(String perNombre, String perRut, String persApellido, String persNacionalidad, int persEdad,
 			String azaIdioma) {
 		super(perNombre, perRut, persApellido, persNacionalidad, persEdad);
 		this.azaIdioma = azaIdioma;
 	}
 
+	/**
+	 * @return the azaIdioma
+	 */
 	public String getAzaIdioma() {
 		return azaIdioma;
 	}
 
+	/**
+	 * @param azaIdioma the azaIdioma to set
+	 */
 	public void setAzaIdioma(String azaIdioma) {
 		this.azaIdioma = azaIdioma;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "Azafate [azaIdioma=" + azaIdioma + "]";
+		return "Azafate [azaIdioma=" + azaIdioma + ", persApellido=" + persApellido + ", persNacionalidad="
+				+ persNacionalidad + ", persEdad=" + persEdad + ", perNombre=" + perNombre + ", perRut=" + perRut + "]";
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -33,6 +68,9 @@ public final class Azafate extends PersonaDeCabina{
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -49,7 +87,6 @@ public final class Azafate extends PersonaDeCabina{
 			return false;
 		return true;
 	}
-	
-	
+
 	
 }
